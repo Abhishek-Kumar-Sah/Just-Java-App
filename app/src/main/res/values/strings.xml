@@ -1,4 +1,14 @@
 <resources>
     <string name="app_name">Just Java</string>
     <string name="calculate_price">Calculate Price</string>
+    <string name="caffine_junction">Caffine Junction</string>
+    <string name="initialQty">0</string>
+    <string name="toppings">Toppings</string>
+    <string name="whipped_cream">Whipped Cream</string>
+    <string name="brown_sugar">Brown Sugar</string>
+    <string name="molasses">Molasses</string>
+    <string name="chocolate_chips">Chocolate Chips</string>
+    <string name="order_summary">Order Summary</string>
+    <string name="it_s_lonely_here">"It's lonely here!"</string>
+
 </resources>

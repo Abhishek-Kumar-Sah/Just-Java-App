@@ -24,27 +24,31 @@ public class MainActivity extends AppCompatActivity {
 
     }
     int noOfCoffee =0;
-    public void calculatePrice(View view) {
+    public void orderSummary(View view) {
       if(noOfCoffee < 0){
-          Toast.makeText(this,"Quantity cannot be negetive",Toast.LENGTH_LONG).show();
-          displayPrice(0);
+          Toast.makeText(this,"Quantity cannot be negetive",Toast.LENGTH_SHORT).show();
           noOfCoffee =0;
           displayQty(noOfCoffee);
+          displayDetails("It's lonely here!");
           return;
       }
        displayQty(noOfCoffee);
-        displayPrice(noOfCoffee);
+        displayDetails(orderDetails());
     }
 
     private void displayQty(int qty) {
-        TextView qtyTextView = (TextView) findViewById(R.id.quantity_text_view);
+        TextView qtyTextView =  findViewById(R.id.quantity_text_view);
         qtyTextView.setText(""+qty);
 
     }
 
-    private void displayPrice(int number) {
-        TextView priceTextView = (TextView) findViewById(R.id.price_text_view);
-        priceTextView.setText("Rs. "+ 90*number);
+    public String orderDetails (){
+        return ("Name = Abhishek Sah"+ "\nQuantity = " + noOfCoffee+ "\nTotal = "+ noOfCoffee*90 + "\n\nThank You!!");
+
+    }
+    private void displayDetails(String dtails) {
+        TextView priceTextView =  findViewById(R.id.orderSummary_text_view);
+        priceTextView.setText(dtails);
     }
 
     public void add1(View view) {
