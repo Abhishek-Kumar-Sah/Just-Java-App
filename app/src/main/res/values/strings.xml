@@ -2,7 +2,7 @@
     <string name="app_name">Just Java</string>
     <string name="calculate_price">Calculate Price</string>
     <string name="caffine_junction">Caffine Junction</string>
-    <string name="initialQty">0</string>
+    <string name="initialQty">Pick Qty</string>
     <string name="toppings">Toppings</string>
     <string name="whipped_cream">Whipped Cream</string>
     <string name="brown_sugar">Brown Sugar</string>
