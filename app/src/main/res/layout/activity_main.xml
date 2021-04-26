@@ -8,145 +8,159 @@
     android:padding="16dp"
     android:background="#85C1E9">
 
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <TextView
-            android:id="@+id/textView"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="41dp"
-            android:fontFamily="sans-serif-condensed"
-            android:text="@string/caffine_junction"
-            android:textAlignment="center"
-            android:textColor="@color/black"
-            android:textSize="25sp"
-             />
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="match_parent"
+                android:layout_height="41dp"
+                android:fontFamily="sans-serif-condensed"
+                android:text="@string/caffine_junction"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="25sp" />
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
 
-        <Button
-            android:id="@+id/subtractQty"
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="wrap_content"
-            android:onClick="subtract1"
-            android:text="-" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
 
-
-        <TextView
-            android:id="@+id/quantity_text_view"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="2"
-            android:fontFamily="monospace"
-            android:text="@string/initialQty"
-            android:textAlignment="center"
-            android:textColor="@color/black"
-            android:textSize="25sp" />
-
-        <Button
-            android:id="@+id/addQty"
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="wrap_content"
-            android:onClick="add1"
-            android:text="+" />
+                <Button
+                    android:id="@+id/subtractQty"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:onClick="subtract1"
+                    android:text="-" />
 
 
-    </LinearLayout>
+                <TextView
+                    android:id="@+id/quantity_text_view"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:fontFamily="monospace"
+                    android:text="@string/initialQty"
+                    android:textAlignment="center"
+                    android:textSize="20sp" />
 
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="19dp" />
+                <Button
+                    android:id="@+id/addQty"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:onClick="add1"
+                    android:text="+" />
 
-        <TextView
-            android:id="@+id/textView2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:fontFamily="sans-serif-condensed"
-            android:text="@string/toppings"
-            android:textAlignment="center"
-            android:textColor="@color/black"
-            android:textSize="16sp" />
 
-        <CheckBox
-            android:id="@+id/checkBox1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/whipped_cream"
-            />
-        <CheckBox
-            android:id="@+id/checkBox2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/brown_sugar"
-            />
-        <CheckBox
-            android:id="@+id/checkBox3"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/molasses"
-            />
-        <CheckBox
-            android:id="@+id/checkBox4"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/chocolate_chips"
-            />
+            </LinearLayout>
 
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="19dp" />
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
 
-        <TextView
-            android:id="@+id/textView4"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/order_summary"
-            android:textAlignment="center"
-            android:textSize="25sp"
-            android:fontFamily="cursive"
-            android:textStyle="bold"
-            android:textColor="@color/black"/>
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-condensed"
+                android:padding="8dp"
+                android:text="@string/toppings"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="16sp" />
 
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="30dp" />
+            <CheckBox
+                android:id="@+id/whippedCream"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="24dp"
+                android:text="@string/whipped_cream" />
 
-        <TextView
-            android:id="@+id/orderSummary_text_view"
-            android:layout_width="match_parent"
-            android:layout_height="227dp"
-            android:fontFamily="monospace"
-            android:text="@string/it_s_lonely_here"
-            android:textAlignment="center"
-            android:textColor="@color/black"
-            android:textSize="18sp" />
+            <CheckBox
+                android:id="@+id/brownSugar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="24dp"
+                android:text="@string/brown_sugar" />
 
-        <Button
-            android:id="@+id/button"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/order_summary"
-            android:textColor="#17202A"
-            android:textSize="20sp"
-            android:onClick="orderSummary"
-            />
-    </LinearLayout>
+            <CheckBox
+                android:id="@+id/molasses"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="24dp"
+                android:text="@string/molasses" />
+
+            <CheckBox
+                android:id="@+id/chocolateChips"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="24dp"
+                android:text="@string/chocolate_chips" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="19dp" />
+
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="cursive"
+                android:text="@string/order_summary"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="25sp"
+                android:textStyle="bold" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="30dp" />
+
+
+            <TextView
+                android:id="@+id/orderSummary_text_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="monospace"
+                android:text="@string/it_s_lonely_here"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+
+
+            <Button
+                android:id="@+id/button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="submitOrder"
+                android:text="@string/order_summary"
+                android:textColor="#17202A"
+                android:textSize="20sp" />
+        </LinearLayout>
+
+    </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>
