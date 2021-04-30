@@ -3,6 +3,7 @@ package com.avi.in.justjava;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.text.Editable;
 import android.view.View;
 import android.widget.*;
 
@@ -26,15 +27,19 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    boolean hasWhippedCream ;
+    boolean hasWhippedCream;
     boolean hasBrownSugar;
     boolean hasMolasses;
     boolean hasChocolateChips;
 
 
-    int noOfCoffee =0;
+    int noOfCoffee =1;
+
 
     public void submitOrder(View view) {
+
+        EditText customerName = findViewById(R.id.customerName);
+        String name = customerName.getText().toString() ;
 
         CheckBox whippedCream = findViewById(R.id.whippedCream);
         hasWhippedCream = whippedCream.isChecked();
@@ -49,17 +54,9 @@ public class MainActivity extends AppCompatActivity {
         hasChocolateChips = chocolateChips.isChecked();
 
 
-      if(noOfCoffee < 0){
-          Toast.makeText(this,"Quantity cannot be negetive",Toast.LENGTH_SHORT).show();
-          noOfCoffee =0;
-          displayQty(noOfCoffee);
-          displayDetails("It's lonely here!");
 
-          return;
-
-      }
        displayQty(noOfCoffee);
-        displayDetails(orderDetails());
+        displayDetails(orderDetails(name));
     }
 
 
@@ -68,63 +65,63 @@ public class MainActivity extends AppCompatActivity {
     private void displayQty(int qty) {
         TextView qtyTextView =  findViewById(R.id.quantity_text_view);
         qtyTextView.setText(""+qty);
-
     }
 
 
 
-    public String orderDetails (){
+    public String orderDetails (String name){
 
         int total = noOfCoffee*90;
-        String message = "Name = Abhishek Sah"+ "\nQuantity = " + noOfCoffee + "\n\nAdd-On(s) : \n" ;
+        String message = "Name : " +name + "\nQuantity = " + noOfCoffee + "\n\nAdd-On(s) : \n" ;
 
 
         if(hasWhippedCream)
         {
             message += "\nWhipped Cream ";
-            total += 40;
+            total += 10 * noOfCoffee;
         }
 
 
         if(hasBrownSugar)
         {
             message += "\nBrown Sugar ";
-            total += 40;
+            total += 8 * noOfCoffee;
         }
 
         if(hasMolasses)
         {
             message += "\nMolasses ";
-            total += 40;
+            total += 30 * noOfCoffee;
         }
 
         if(hasChocolateChips)
         {
             message += "\nChocolate Chips ";
-            total += 40;
+            total += 40 * noOfCoffee;
         }
 
-        if(noOfCoffee == 0)
-        {
-            total = 0;
 
-            Toast.makeText(this, "Add Coffee To Proceed ", Toast.LENGTH_SHORT).show();
-        }
-        message += "\n\n\nGrand Total : " + total + "\n\n\nThank You!!" ;
+        message += "\n\n\nGrand Total : $" + total + "\n\n\nThank You!!" ;
         return message;
 
     }
 
 
 
-    private void displayDetails(String dtails) {
+    private void displayDetails(String details) {
         TextView orderSummaryTextView =  findViewById(R.id.orderSummary_text_view);
-        orderSummaryTextView.setText(dtails);
+        orderSummaryTextView.setText(details);
     }
 
 
 
     public void add1(View view) {
+
+        if(noOfCoffee == 50){
+            Toast.makeText(this, "Cannot Order More Than 50 Coffees At A Time", Toast.LENGTH_SHORT).show();
+            displayQty(noOfCoffee);
+            return;
+        }
         noOfCoffee++;
         displayQty(noOfCoffee);
     }
@@ -132,6 +129,12 @@ public class MainActivity extends AppCompatActivity {
 
 
     public void subtract1(View view) {
+
+        if(noOfCoffee == 1){
+            Toast.makeText(this, "Cannot Order Less Than 1 Coffee", Toast.LENGTH_SHORT).show();
+            displayQty(noOfCoffee);
+            return;
+        }
         noOfCoffee--;
         displayQty(noOfCoffee);
     }
