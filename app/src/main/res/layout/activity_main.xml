@@ -27,8 +27,9 @@
             <TextView
                 android:id="@+id/textView"
                 android:layout_width="match_parent"
-                android:layout_height="41dp"
-                android:fontFamily="sans-serif-condensed"
+                android:layout_height="wrap_content"
+                android:fontFamily="cursive"
+                android:textStyle="bold"
                 android:text="@string/caffine_junction"
                 android:textAlignment="center"
                 android:textColor="@color/black"
@@ -36,8 +37,21 @@
 
             <Space
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="40dp" />
 
+            <EditText
+                android:id="@+id/customerName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textCapWords"
+                android:text=""
+                android:hint="Enter Your Name"
+                android:textAlignment="center"/>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="20dp"></Space>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -79,12 +93,12 @@
 
             <Space
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="35dp" />
 
             <TextView
                 android:id="@+id/textView2"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="59dp"
                 android:fontFamily="sans-serif-condensed"
                 android:padding="8dp"
                 android:text="@string/toppings"
@@ -122,7 +136,7 @@
 
             <Space
                 android:layout_width="match_parent"
-                android:layout_height="19dp" />
+                android:layout_height="57dp" />
 
 
             <TextView
