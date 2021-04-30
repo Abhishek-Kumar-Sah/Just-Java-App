@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    boolean hasWhippedCream ;
+    boolean hasWhippedCream;
     boolean hasBrownSugar;
     boolean hasMolasses;
     boolean hasChocolateChips;
