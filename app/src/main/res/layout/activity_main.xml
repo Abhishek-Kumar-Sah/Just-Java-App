@@ -170,10 +170,19 @@
                 android:id="@+id/button"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:onClick="submitOrder"
+                android:onClick="orderSummary"
                 android:text="@string/order_summary"
                 android:textColor="#17202A"
-                android:textSize="20sp" />
+                android:textSize="18sp" />
+
+            <Button
+                android:id="@+id/button2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text= "Submit order"
+                android:textSize="20sp"
+                android:onClick="submitOrder"
+                />
         </LinearLayout>
 
     </ScrollView>
